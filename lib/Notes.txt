@@ -1,0 +1,16 @@
+flutter pub add http
+flutter pub add freezed_annotation
+flutter pub add riverpod
+flutter pub add flutter_riverpod
+flutter pub add freezed
+flutter pub add build_runner
+
+
+dependencies:
+  freezed_annotation:
+  riverpod: ^0.12.2
+  flutter_riverpod: ^0.12.2
+  http:
+dev_dependencies:
+  build_runner: ^1.11.0
+  freezed: ^0.12.7
