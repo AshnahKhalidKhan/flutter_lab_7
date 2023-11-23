@@ -9,8 +9,6 @@ import 'package:http/http.dart' as http;
 final clientProvider = Provider<ApiClient>((_) => ApiClient(http.Client()));
 
 //dependent sources
-
-
 // final userFutureProvider = FutureProvider<ApiClient>((ref) async {return getUser();});
 
 

@@ -19,7 +19,7 @@ class _APIPageState extends State<APIPage>
   @override
   Widget build(BuildContext context) 
   {
-    AsyncValue<User> user = watch(userStateFutureProvider);
+    // AsyncValue<User> user = watch(userStateFutureProvider);
     return Scaffold
     (
       body: Consumer
@@ -27,7 +27,17 @@ class _APIPageState extends State<APIPage>
         builder: (context, watch, child)
         {
           final state = watch(userStateNotifierProvider.state);
-          return state.maybeWhen(orElse: const Text('hello'));
+          return state.maybeWhen
+          (
+            loading: () => const Center(child: CircularProgressIndicator()),
+            error: (err, stack) => Center(child: Text(err.toString())),
+            data: (user)
+            {
+              return Text(user[0].name);
+            },
+            orElse: const Text('hello'),
+            
+          );
         }
       ),
     );
