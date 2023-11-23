@@ -1,3 +1,4 @@
+import 'package:flutter_lab_7/Core/Model/user_model.dart';
 import 'package:flutter_lab_7/Core/Network/api.dart';
 import 'package:flutter_lab_7/Provider/provider.dart';
 import 'package:flutter_lab_7/User/States/states.dart';
@@ -8,7 +9,9 @@ import 'package:http/http.dart' as http;
 final clientProvider = Provider<ApiClient>((_) => ApiClient(http.Client()));
 
 //dependent sources
-// final todosProvider = StateNotifierProvider<TodosNotifier, List<Todo>>((ref) => TodosNotifier())
+
+
+// final userFutureProvider = FutureProvider<ApiClient>((ref) async {return getUser();});
 
 
 final userStateNotifierProvider = StateNotifierProvider((ref) => UserStateNotifier(ref.watch(clientProvider)));

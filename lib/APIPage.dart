@@ -19,6 +19,7 @@ class _APIPageState extends State<APIPage>
   @override
   Widget build(BuildContext context) 
   {
+    AsyncValue<User> user = watch(userStateFutureProvider);
     return Scaffold
     (
       body: Consumer
